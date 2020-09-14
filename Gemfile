@@ -3,9 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',             '6.0.3'
 gem 'bcrypt',            '3.1.13'
-gem 'bootstrap-sass',    '~> 3.4', '>= 3.4.1'
+gem 'bootstrap-sass',    '3.4.1'
 gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.4.1'
+gem 'font-awesome-sass', '5.4.1'
 gem 'puma',              '4.3.4'
 gem 'sass-rails',        '5.1.0'
 gem 'webpacker',         '4.0.7'

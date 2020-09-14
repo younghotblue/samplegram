@@ -4,6 +4,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* universal */
 
 body {
@@ -57,8 +67,19 @@ p {
 
 /* header */
 .navbar {
+  height: 54px;
+  align-items: center;
+  padding: 0 20px;
   background-color: rgba(var(--b3f,250,250,250),1);  
 }
+
+nav {
+  padding-right: 18px;
+}
+
+.nav > li > a {
+  height: 54px;
+} 
 
 .navbar-inverse {
   background-color: #FFF;
@@ -81,6 +102,148 @@ p {
   padding-top: 9px;
 }
 
+.search-form {
+  margin: 0 auto;
+  position: relative;
+  top: 15px;
+  min-width: 125px;
+  width: 210px;
+  height: 24px;
+  text-align: center;
+  .search-box {
+    outline: 0;
+    border-radius: 2px 0 0 2px;
+    background: #eee;	
+    text-align: center;
+  }
+  .search-btn {
+    position: absolute; 
+    left: 1px;
+    bottom: 3px;
+    background: none;
+    border: none;
+    font-size: 11px;/*アイコンサイズ*/
+  }
+}
+
+#font-color {
+  color: #9d9d9d;
+}
+
 .fas {
   color: #000;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+.main {
+  margin: 0 auto;
+  width: 90%;
+  padding: 50px 75px 100px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.font-style {
+  font-family: Billabong;
+  font-size: 60px;
+}
+
+.gray {
+  text-align: center;
+  color: #8e8e8e;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  @include box_sizing;
+  width: 100%;
+}
+
+input {
+  height: auto !important;
+}
+
+.form-box {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 1px;
+  margin: 0 0 30px;
+  padding: 10px 5px 20px 5px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.acount-link {
+  text-align: center;
+  padding-top: 30px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

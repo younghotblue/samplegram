@@ -1,3 +1,30 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+<div class="main">
+  <div class="form-box">
+    <h1 class="font-style">Samplegram</h1>
+    <p class="gray">登録して友達の写真や動画をチェックしよう</p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_with model: @user, local: true do |f| %>
+          <%= render 'shared/error_messages' %>
+          
+          <%= f.text_field :name, :placeholder => "フルネーム", class: 'form-control' %>
+          
+          <%= f.text_field :user_name, :placeholder => "ユーザーネーム", class: 'form-control' %>
+          
+          <%= f.email_field :email, :placeholder => "メールアドレス", class: 'form-control' %>
+          
+          <%= f.password_field :password, :placeholder => "パスワード", class: 'form-control' %>
+          
+          <%= f.password_field :password_confirmation, :placeholder => "パスワードの確認", class: 'form-control' %>
+          
+          <%= f.submit "登録する", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <p class="acount-link">
+      アカウントをお持ちですか？
+      <a href="#">ログインする</a>
+    </p>
+  </div>
+</div>
