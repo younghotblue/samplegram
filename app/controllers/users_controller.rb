@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
   
+  def search
+    if params[:name].present?
+      @users = User.where('name LIKE ?', "%#{params[:name]}%")
+    else
+      @users = User.none
+    end
+  end
+  
   def show
     @user = User.find(params[:id])
   end
@@ -11,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    
     if @user.save
+      log_in @user
       flash[:success] = "ようこそSamplegramへ!"
       redirect_to @user
     else
