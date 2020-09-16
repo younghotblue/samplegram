@@ -213,7 +213,6 @@ aside {
   font-size: 15px;
   font-weight: 600;
   line-height: 20px;
-  padding-bottom: 10px;
 }
 
 input, textarea, select, .uneditable-input {
@@ -233,6 +232,10 @@ input {
   border-radius: 1px;
   margin: 0 0 30px;
   padding: 10px 5px 20px 5px;
+}
+
+.form-margin {
+  padding: 10px 35px;
 }
 
 .form-control {
@@ -257,4 +260,18 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
 }
