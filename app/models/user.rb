@@ -7,9 +7,13 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: true
+                    uniqueness: true, allow_nil: true
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  VALID_PHONE_NUMBER_REGEX = /\A0(\d{1}[-(]?\d{4}|\d{2}[-(]?\d{3}|\d{3}[-(]?\d{2}|\d{4}[-(]?\d{1})[-)]?\d{4}\z|\A0[5789]0[-]?\d{4}[-]?\d{4}\z/
+  validates :phone_number, format: { with: VALID_PHONE_NUMBER_REGEX }, allow_blank: true
+  validates :profile, presence: true, length: { maximum: 160 }, allow_blank: true
+  enum sex: { woman: 0, man: 1 }
   
   # 渡された文字列のハッシュ値を返す
   def User.digest(string)
