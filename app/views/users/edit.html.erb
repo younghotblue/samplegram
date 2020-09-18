@@ -1,48 +1,52 @@
 <% provide(:title, "Edit user") %>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="gravatar_edit">
-      <%= gravatar_for @user, size: 50 %>
-      <%= @user.name %>
-    </div>
-    <a href="https://gravatar.com/emails" target="_blank">
-      プロフィール写真を変更
-    </a>
-    
-    <%= form_with(model: @user, local: true) do |f| %>
-      <%= render 'shared/error_messages' %>
-      
-      <%= f.label :name %>
-      <%= f.text_field :name, :placeholder => "名前", class: 'form-control' %>
-      <p class="edit-explanation">
-        周りから知られている名前（氏名、ニックネーム、ビジネス名）を使用すると、他の人があなたのアカウントを見つけやすくなります。
-      </p>
-      
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, :placeholder => "ユーザーネーム", class: 'form-control' %>
-      
-      <%= f.label :website %>
-      <%= f.text_field :website, :placeholder => "ウェブサイト", class: 'form-control' %>
-      
-      <%= f.label :profile %>
-      <%= f.text_field :profile, :placeholder => "自己紹介", class: 'form-control' %>
-      
-      <div class="edit-explanation">
-        <span>非公開情報</span>
-        <span>アカウントがビジネス、ペットなどに使用されている場合でも、個人の情報を入力してください。これは公開プロフィールでは表示されません。</span>
+<div class="main">
+  <div class="form-box">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="gravatar_edit">
+          <%= gravatar_for @user, size: 50 %>
+          <%= @user.name %>
+        </div>
+        <a href="https://gravatar.com/emails" target="_blank">
+          プロフィール写真を変更
+        </a>
+        
+        <%= form_with model: @user, local: true, class: "top-control" do |f| %>
+          <%= render 'shared/error_messages' %>
+          
+          <%= f.label :name %>
+          <%= f.text_field :name, :placeholder => "名前", class: 'form-control' %>
+          <p class="edit-explanation">
+            周りから知られている名前（氏名、ニックネーム、ビジネス名）を使用すると、他の人があなたのアカウントを見つけやすくなります。
+          </p>
+          
+          <%= f.label :user_name %>
+          <%= f.text_field :user_name, :placeholder => "ユーザーネーム", class: 'form-control' %>
+          
+          <%= f.label :website %>
+          <%= f.text_field :website, :placeholder => "ウェブサイト", class: 'form-control' %>
+          
+          <%= f.label :profile %>
+          <%= f.text_field :profile, :placeholder => "自己紹介", class: 'form-control' %>
+          
+          <div class="edit-explanation">
+            <span>非公開情報</span>
+            <span>アカウントがビジネス、ペットなどに使用されている場合でも、個人の情報を入力してください。これは公開プロフィールでは表示されません。</span>
+          </div>
+          
+          <%= f.label :email %>
+          <%= f.email_field :email, :placeholder => "メールアドレス", class: 'form-control' %>
+          
+          <%= f.label :phone_number %>
+          <%= f.telephone_field :phone_number, :placeholder => "電話番号", class: 'form-control' %>
+          
+          <%= f.label :sex %>
+          <%= f.select :sex, User.sexes_i18n.keys.map {|k| [User.sexes_i18n[k], k]}, {}, autofocus: true, :placeholder => "性別", class: 'form-control' %>
+          
+          <%= f.submit "送信する", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
-      
-      <%= f.label :email %>
-      <%= f.email_field :email, :placeholder => "メールアドレス", class: 'form-control' %>
-      
-      <%= f.label :phone_number %>
-      <%= f.telephone_field :phone_number, :placeholder => "電話番号", class: 'form-control' %>
-      
-      <%= f.label :sex %>
-      <%= f.select :sex, User.sexes_i18n.keys.map {|k| [User.sexes_i18n[k], k]}, {}, autofocus: true, :placeholder => "性別", class: 'form-control' %>
-      
-      <%= f.submit "送信する", class: "btn btn-primary" %>
-    <% end %>
+    </div>
   </div>
 </div>
