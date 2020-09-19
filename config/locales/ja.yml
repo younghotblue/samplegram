@@ -17,6 +17,8 @@ ja:
         profile: 自己紹介
         birth_date: 年齢
         sex: 性別
+        man: 男性
+        woman: 女性
         school: 学校名
         admin: 管理者権限
         password: パスワード
