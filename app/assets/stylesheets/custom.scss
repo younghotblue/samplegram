@@ -294,6 +294,38 @@ input {
   }
 }
 
+.forget-pass-link {
+  display: block;
+  color: #00376b;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 14px;
+  text-align: center;
+}
+
+.lock-icon {
+  text-align: center;
+  margin: 10px 0 5px;
+  
+}
+
+.cant-login {
+  color: #262626;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.login-explanation {
+  text-align: center;
+  color: #8e8e8e;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0 20px 10px;
+}
+
 /* Users index */
 
 .users {

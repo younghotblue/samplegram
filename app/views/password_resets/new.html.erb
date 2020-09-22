@@ -1,0 +1,21 @@
+<% provide(:title, "Forgot password") %>
+<div class="main">
+  <div class="form-box">
+    <div class="lock-icon">
+      <i class="fas fa-lock fa-5x"></i>
+    </div>
+    <h1 class="cant-login">ログインできない場合</h1>
+    <p class="login-explanation">アカウントへのアクセスを再開するためのリンクを送信するには、メールアドレスを入力してください。</p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_with(url: password_resets_path, scope: :password_reset,
+                        local: true) do |f| %>
+          
+          <%= f.email_field :email, :placeholder => "メールアドレス", class: 'form-control' %>
+          
+          <%= f.submit "ログインリンクを送信", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
