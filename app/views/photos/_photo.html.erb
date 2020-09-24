@@ -1,0 +1,15 @@
+<li id="photo-<%= photo.id %>">
+  <%= link_to gravatar_for(photo.user, size: 50), photo.user %>
+  <span class="user"><%= link_to photo.user.name, photo.user %></span>
+  <span class="content">
+    <%= photo.content %>
+    <%= image_tag photo.display_image if photo.image.attached? %>
+  </span>
+  <span class="timestamp">
+    <%= time_ago_in_words(photo.created_at) %>前 
+    <% if current_user?(photo.user) %>
+      <%= link_to "削除", photo, method: :delete,
+                                       data: { confirm: "本当に削除しますか？" } %>
+    <% end %>
+  </span>
+</li>

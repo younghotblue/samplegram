@@ -11,7 +11,7 @@
         </li>
         <% if logged_in? %>
           <li>
-            <%= link_to "#", :method => :get do %>
+            <%= link_to new_photo_path(current_user) do %>
               <i class="fas fa-camera fa-2x"></i>
             <% end %>
           </li>

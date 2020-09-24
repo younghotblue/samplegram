@@ -192,6 +192,7 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+  font-size: 20px;
 }
 
 /* forms */
@@ -236,7 +237,7 @@ input {
 }
 
 .top-control {
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .form-control {
@@ -294,6 +295,13 @@ input {
   }
 }
 
+.facebook-login {
+  display: inline;
+  color: #385185;
+  margin-top: 14px;
+  text-align: center;
+}
+
 .forget-pass-link {
   display: block;
   color: #00376b;
@@ -338,3 +346,50 @@ input {
   }
 }
 
+/* photos */
+
+.photos {
+  list-style: none;
+  padding: 0;
+  li {
+    margin: 0 auto;
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  devise :omniauthable
+  has_many :photos, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_user_name
   before_save   :downcase_email
@@ -73,7 +75,27 @@ class User < ApplicationRecord
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
+  
+  # 完全な実装は次章の「ユーザーをフォローする」を参照
+  def feed
+    Photo.where("user_id = ?", id)
+  end
+  
+  #facebook認証実施済みユーザはそのままログイン
+  def self.find_for_oauth(auth)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
 
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        email:    auth.info.email,
+        password: Devise.friendly_token[0, 20]
+      )
+    end
+    user
+  end
+  
   private
     
     #ユーザーネームをすべて小文字にする

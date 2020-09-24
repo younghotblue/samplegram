@@ -19,6 +19,9 @@
         <% end %>
       </div>
     </div>
+    <div class="facebook-login">
+      <%= link_to "Facebookでログイン", user_facebook_omniauth_authorize_path  %>
+    </div>
     <div class="forget-pass-link">
       <%= link_to "パスワードを忘れた場合", new_password_reset_path %>
     </div>

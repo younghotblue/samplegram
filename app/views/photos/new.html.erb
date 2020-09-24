@@ -1,0 +1,29 @@
+<% provide(:title, 'Post') %>
+<% if logged_in? %>
+  <div class="main">
+    <div class="form-box">
+      <div class="row">
+        <aside class="col-md-6 col-md-offset-3">
+          <section class="user_info">
+            <%= link_to gravatar_for(current_user, size: 70), current_user %>
+            <h1><%= current_user.name %></h1>
+            <span><%= link_to "プロフィールを見る", current_user %></span>
+            <span><%= pluralize(current_user.photos.count, "投稿") %></span>
+          </section>
+          <section class="photo_form">
+            <%= form_with(model: @photo, local: true) do |f| %>
+              <%= render 'shared/error_messages', object: f.object %>
+              <div class="field">
+                <%= f.text_area :content, placeholder: "新しい投稿を作成", class: "form-size" %>
+              </div>
+              <%= f.submit "投稿", class: "btn btn-primary" %>
+              <span class="image">
+                <%= f.file_field :image %>
+              </span>
+            <% end %>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+<% end %>

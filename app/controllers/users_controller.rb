@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @photos = @user.photos
   end
 
   def new
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "プロフィールが更新されました。"
       redirect_to @user
     else
       render 'edit'
@@ -42,8 +43,8 @@ class UsersController < ApplicationController
   
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to users_url
+    flash[:success] = "ユーザーを削除しました。"
+    redirect_to root_url
   end
   
   private
@@ -53,16 +54,7 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
     
-    # beforeアクション
-    
-    # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+    # beforeフィルター
     
     # 正しいユーザーかどうか確認
     def correct_user
