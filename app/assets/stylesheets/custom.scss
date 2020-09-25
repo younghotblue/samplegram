@@ -235,6 +235,9 @@ input {
   margin: 0 0 30px;
   padding: 10px 5px 30px 5px;
 }
+.form-margin {
+  margin-bottom: 30px;  
+}
 
 .top-control {
   margin-top: 35px;
@@ -296,10 +299,17 @@ input {
 }
 
 .facebook-login {
-  display: inline;
-  color: #385185;
-  margin-top: 14px;
-  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+  .fab {
+    color: #385185;
+    padding-right: 5px;
+  }
+  .facebook-login-txt {
+    color: #385185;
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
 
 .forget-pass-link {
