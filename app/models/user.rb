@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   devise :omniauthable
+  has_many :posts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_user_name
   before_save   :downcase_email
@@ -88,6 +89,10 @@ class User < ApplicationRecord
       )
     end
     user
+  end
+  
+  def feed
+    Post.where("user_id = ?", id)
   end
   
   private

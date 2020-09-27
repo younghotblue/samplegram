@@ -4,12 +4,10 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <div class="gravatar_edit">
-          <%= gravatar_for @user, size: 60 %>
+          <%= image_tag avatar_url(@user), size: 70 %>
           <%= @user.user_name %>
         </div>
-        <a href="https://gravatar.com/emails" target="_blank">
-          プロフィール写真を変更
-        </a>
+        <%= link_to "プロフィール写真を変更", "https://gravatar.com/emails", class: "btn btn-outline-dark edit-profile-btn" %>
         
         <%= form_with model: @user, local: true, class: "top-control" do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
@@ -46,7 +44,9 @@
           <%= f.submit "送信する", class: "btn btn-primary" %>
           
           <% if current_user?(@user) %>
+          <div class="destroy-txt">
             <%= link_to "アカウントを削除する", @user, method: :destroy, data: { confirm: "本当に削除しますか？" } %>
+          </div>
           <% end %>
         <% end %>
       </div>

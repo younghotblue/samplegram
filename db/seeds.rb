@@ -26,6 +26,6 @@ end
 # ユーザーの一部を対象に投稿を生成する
 users = User.order(:created_at).take(6)
 50.times do
-  content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.photos.create!(content: content) }
+  caption = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.photos.create!(caption: caption) }
 end

@@ -1,13 +1,5 @@
 <% if logged_in? %>
-  <div class="main">
-    <div class="form-box">
-      <div class="row">
-        <div class="col-md-8">
-          <%= render 'shared/feed' %>
-        </div>
-      </div>
-    </div>
-  </div>  
+   <%= render 'shared/feed' %>
 <% else %>
   <div class="center jumbotron">
     <h1>ようこそSamplegramへ！</h1>
