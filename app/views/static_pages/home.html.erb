@@ -1,5 +1,11 @@
 <% if logged_in? %>
-   <%= render 'shared/feed' %>
+  <div class="col-md-8 col-md-2 mx-auto">
+    <div class="card-wrap">
+      <div class="card">
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+  </div>
 <% else %>
   <div class="center jumbotron">
     <h1>ようこそSamplegramへ！</h1>

@@ -7,7 +7,7 @@
           <%= image_tag avatar_url(@user), size: 70 %>
           <%= @user.user_name %>
         </div>
-        <%= link_to "プロフィール写真を変更", "https://gravatar.com/emails", class: "btn btn-outline-dark edit-profile-btn" %>
+        <%= link_to "プロフィール写真を変更", "https://gravatar.com/emails", class: "btn btn-outline-dark common-btn edit-profile-btn" %>
         
         <%= form_with model: @user, local: true, class: "top-control" do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
