@@ -23,9 +23,10 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
-# ユーザーの一部を対象に投稿を生成する
+# ユーザーの一部を対象にマイクロポストを生成する
 users = User.order(:created_at).take(6)
-50.times do
+6.times do
   caption = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.photos.create!(caption: caption) }
+  users.each { |user| @posts = user.posts.create!(caption: caption)
+        @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
 end

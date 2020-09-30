@@ -6,7 +6,7 @@
         <%= image_tag avatar_url(@user), size: 70 %>
         <%= @user.user_name %>
       </div>
-      <%= link_to "プロフィール写真を変更", "https://gravatar.com/emails",
+      <%= link_to "プロフィールを編集", edit_user_path,
                     class: "btn btn-outline-dark common-btn edit-profile-btn" %>
     </div>
   </div>
