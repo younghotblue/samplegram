@@ -495,16 +495,31 @@ span.image {
 }
 
 .love {
-  background-image: image-url("parts5");
+  background-image: image-url("parts5.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
   background-size: 36px !important;
 }
 
+.loved {
+  background-image: image-url("parts7.png");
+  background-repeat: no-repeat;
+  height: 36px;
+  width: 36px;
+  background-size: 36px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+}
+
 .comment {
   margin-left: 8px;
-  background-image: image-url("parts6");
+  background-image: image-url("parts6.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
