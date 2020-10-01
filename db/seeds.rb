@@ -30,3 +30,11 @@ users = User.order(:created_at).take(6)
   users.each { |user| @posts = user.posts.create!(caption: caption)
         @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
 end
+
+#リレーションシップを作成する
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
