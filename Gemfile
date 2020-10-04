@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',                      '6.0.3'
+gem 'slim-rails'
+gem 'html2slim'
 gem 'active_storage_validations', '0.8.2'
 gem 'omniauth'
 gem 'omniauth-facebook'
