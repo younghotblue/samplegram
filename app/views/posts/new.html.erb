@@ -4,20 +4,19 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="gravatar_edit">
-            <%= image_tag gravatar_for(current_user), class: "post-profile-icon" %>
-            <%= link_to "プロフィールを見る", current_user,
-                        class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+            <%= link_to gravatar_for(current_user, size: 50), current_user, class: "post-profile-icon" %>
           </div>
           <section class="photo_form">
             <%= form_with model: @post, local: true do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
-              <div class="field">
-                <%= f.text_field :caption, class: "form-control border-0", placeholder: "キャプションを書く" %>
-              </div>
+              
+              <%= f.text_field :caption, class: "form-control", placeholder: "キャプションを書く" %>
+              
+              <%= f.submit "投稿", class: "btn btn-primary" %>
+              
               <span class="image">
                 <%= f.file_field :image, accept: "image/jpeg, image/png" %>
               </span>
-              <%= f.submit "投稿", class: "btn btn-primary" %>
             <% end %>
           </section>
         </div>

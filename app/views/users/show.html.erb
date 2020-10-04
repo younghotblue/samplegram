@@ -1,17 +1,53 @@
 <% provide(:title, @user.name) %>
-<div class="main">
+
+<div class="container">
   <div class="row">
-    <aside class="col-md-6 col-md-offset-3">
+    <aside class="col-md-6 col-md-offset-3 user-profile">
       <section class="gravatar_edit">
         <%= gravatar_for @user, size: 70 %>
         <%= @user.user_name %>
         <%= link_to "プロフィールを編集", edit_user_path,
-                      class: "btn btn-outline-dark common-btn edit-profile-btn" %>
+                      class: "btn edit-profile-btn" %>
+        <span><%= render 'follow_form' if logged_in? %></span>
       </section>
       <section class="stats">
         <%= render 'shared/stats' %>
       </section>
+      <section class="profile">
+        <span><%= @user.name %></span>
+        <span><%= @user.profile %></span>
+      </section>
     </aside>
-    <%= render 'follow_form' if logged_in? %>
+  </div>
+</div>
+<div class="gallery">
+  <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-md-4">
+        <div class="image-margin">
+          <div class="xxx" data-toggle="modal" data-target="#myModal">
+            <%= image_tag post.image_gallery if post.image.attached? %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title mx-auto" id="exampleModalLabel">プロフィール写真を変更</h4>
+      </div>
+      <div class="modal-body">
+        <span class="link-font">写真をアップロード</span>
+      </div>
+      <div class="modal-body">
+        <span class="denger-link">現在の写真を削除</span>
+      </div>
+      <div class="modal-body-b">
+        <span data-dismiss="modal">キャンセル</span>
+      </div>
+    </div>
   </div>
 </div>

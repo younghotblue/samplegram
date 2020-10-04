@@ -143,6 +143,9 @@ GEM
       guard-compat (~> 1.2)
       minitest (>= 3.0)
     hashie (4.1.0)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -158,6 +161,18 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     jwt (2.2.2)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -303,6 +318,13 @@ GEM
       childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
     shellany (0.0.1)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.2.0)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -315,6 +337,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
+    temple (0.8.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -365,10 +388,12 @@ DEPENDENCIES
   font-awesome-sass (= 5.4.1)
   guard (= 2.16.2)
   guard-minitest (= 2.4.6)
+  html2slim
   image_processing (= 1.9.3)
   jbuilder (= 2.9.1)
   jquery-rails
   jquery-ui-rails
+  kaminari
   listen (= 3.1.5)
   mini_magick (= 4.9.5)
   minitest (= 5.11.3)
@@ -383,6 +408,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (= 5.1.0)
   selenium-webdriver (= 3.142.4)
+  slim-rails
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.1)

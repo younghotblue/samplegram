@@ -25,7 +25,7 @@ end
 
 # ユーザーの一部を対象にマイクロポストを生成する
 users = User.order(:created_at).take(6)
-2.times do
+4.times do
   caption = Faker::Lorem.sentence(word_count: 5)
   users.each { |user| @posts = user.posts.create!(caption: caption)
         @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
