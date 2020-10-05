@@ -1,13 +1,13 @@
 class LikesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   
-  
   def create
     @like = current_user.likes.build(like_params)
     @post = @like.post
-    if @like.save
-      respond_to :js
-    end
+    @like.save
+    post = Post.find(params[:post_id])
+    post.create_notification_like!(current_user)
+    respond_to :js
   end
 
   def destroy

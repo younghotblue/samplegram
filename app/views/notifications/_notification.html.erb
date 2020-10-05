@@ -1,0 +1,12 @@
+<div class="notification-view">
+  <%= link_to user_path(notification.visitor) do %>
+    <%= gravatar_for notification.visitor, size: 35 %>
+  <% end %>
+  <div class="notification-font"><%= notification_form(notification) %></div>
+  <span class="timestamp"><%= "#{time_ago_in_words(notification.created_at)}前" %></span>
+  <br>
+  <% if !@comment.nil? %>
+    <p class="notification-comment"><%= @comment %></p>
+  <% end %>
+  <hr class="notification-hr">
+</div>
