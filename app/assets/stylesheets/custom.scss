@@ -445,7 +445,8 @@ span.image {
 
 .user-profile {
   position: relative;
-  left: 75px;
+  left: 95px;
+  width: 30%;
 }
 
 .btn-width {
@@ -457,6 +458,7 @@ span.image {
 .gallery {
   position: relative;
   top: 40px;
+  left: 25px;
 }
 
 .image-margin {
@@ -542,6 +544,19 @@ h4{
 
 // posts
 
+.post-wrap {
+  margin: 0 auto;
+  width: 100%;
+  padding: 25px 75px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.col-md-10 {
+  position: relative;
+  right: 70px;
+}
+
 .posts {
   list-style: none;
 }
@@ -566,6 +581,25 @@ h4{
 
 .black-color {
   color: #262626;
+}
+
+.post-delete {
+  float: right;
+  color: #262626;
+  position: relative;
+  left: 445px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.post-show-delete {
+  color: #262626;
+  position: relative;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
 }
 
 .parts {
@@ -640,7 +674,7 @@ h4{
   color: #262626;
 }
 
-.post-wrap .col-md-8 {
+.post-show-wrap .col-md-8 {
   padding: 0px;
 }
 
@@ -656,12 +690,11 @@ h4{
 
 .card-right-comment {
   padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-  height: 320px;
+  height: 235px;
   overflow: auto;
 }
 
-.postShow-wrap {
+.post-show-frame {
   border: 1px solid #e6e6e6;
   margin: 40px;
 }
@@ -670,6 +703,16 @@ h4{
   display: flex;
   align-items: center;
   line-height: 0;
+}
+
+.post-show-hr {
+  width: 100%;
+}
+
+.action-parts {
+  border-top: 1px solid #e6e6e6;
+  position: relative;
+  top: 20px;
 }
 
 // notifications

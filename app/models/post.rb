@@ -22,6 +22,10 @@ class Post < ApplicationRecord
     image.variant(resize_to_limit: [300, 300])
   end
   
+  def show_image
+    image.variant(resize_to_limit: [700, 800])
+  end
+  
   def liked_by(user)
     # user_idとpost_idが一致するlikeを検索する
     Like.find_by(user_id: user.id, post_id: id)
