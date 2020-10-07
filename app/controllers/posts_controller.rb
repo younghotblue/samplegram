@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.user == current_user
-      flash[:notice] = "投稿が削除されました" if @post.destroy
+      flash[:success] = "投稿が削除されました" if @post.destroy
     else
       flash[:alert] = "投稿の削除に失敗しました"
     end

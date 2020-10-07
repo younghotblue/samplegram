@@ -272,6 +272,7 @@ aside {
   font-size: 15px;
   font-weight: 600;
   line-height: 20px;
+  margin-bottom: 15px;
 }
 
 input, textarea, select, .uneditable-input {
@@ -380,6 +381,21 @@ input {
   .facebook-login-txt {
     color: #385185;
     font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.facebook-signup-link {
+  display: inline-block;
+  width: 100%;
+  .fab-signup {
+    color: #fff;
+    padding-right: 5px;
+    text-align: center;
+  }
+  .facebook-signup-txt {
+    color: #fff;
+    font-size: 14px;
     font-weight: bold;
   }
 }
@@ -727,6 +743,11 @@ h4{
   left: 350px;
 }
 
+.notification-none {
+  font-size: 16px;
+  padding-top: 30px;
+}
+
 .notification-font {
   font-size: 15px;
 }
@@ -736,6 +757,6 @@ h4{
   font-size: 15px;
 }
 
-.notification-hr {
+.hr {
   width: 100%;
 }

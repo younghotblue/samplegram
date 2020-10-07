@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :caption, length: { maximum: 140 }
   validates :user_id, presence: true
-  validates :image,   content_type: { in: %w[image/jpeg, image/png],
+  validates :image, content_type: { in: %w[image/jpeg image/png],
                                       message: "有効な画像形式である必要があります" },
                       size:         { less_than: 5.megabytes,
                                       message: "5MB未満である必要があります" }
@@ -29,6 +29,16 @@ class Post < ApplicationRecord
   def liked_by(user)
     # user_idとpost_idが一致するlikeを検索する
     Like.find_by(user_id: user.id, post_id: id)
+  end
+  
+  def image_presence
+    if image.attached?
+      if !image.content_type.in?(%('image/jpeg image/png'))
+        errors.add(:image, 'にはjpegまたはpngファイルを添付してください')
+      end
+    else
+      errors.add(:image, 'ファイルを添付してください')
+    end
   end
   
   def create_notification_like!(current_user)

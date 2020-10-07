@@ -23,13 +23,37 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
-# ユーザーの一部を対象にマイクロポストを生成する
+#投稿を生成する
 users = User.order(:created_at).take(6)
-6.times do
-  caption = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| @posts = user.posts.create!(caption: caption)
-        @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
-end
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/yEMIStDLa2W9ZWf.png'), filename: "yEMIStDLa2W9ZWf.png")}
+
+users = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/r67h4934.jpeg'), filename: "r67h4934.jpeg")}
+
+users = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/OeL5025.jpeg'), filename: "OeL5025.jpeg")}
+
+users = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/ocpIYPhI7I572WF.png'), filename: "ocpIYPhI7I572WF.png")}
+
+users = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/eEy5oxiZSysNQwZ.png'), filename: "eEy5oxiZSysNQwZ.png")}
+
+users = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @posts = user.posts.create!(caption: caption)
+      @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
+
 
 #リレーションシップを作成する
 users = User.all

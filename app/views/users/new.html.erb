@@ -5,7 +5,14 @@
     <p class="gray">登録して友達の写真や動画をチェックしよう</p>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <%= form_with model: @user, local: true do |f| %>
+        <div class="facebook-login">
+          <%= link_to user_facebook_omniauth_authorize_path, class: "facebook-signup-link btn btn-primary" do %>
+            <span class="fab fa-facebook-square fab-signup"></span>
+            <span class="facebook-signup-txt">Facebookでログイン</span>
+          <% end %>
+        </div>
+        <hr class="hr">
+        <%= form_with model: @user, local: true, class: "form-margin" do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           
           <%= f.text_field :name, :placeholder => "フルネーム", class: 'form-control' %>
@@ -20,11 +27,11 @@
           
           <%= f.submit "登録する", class: "btn btn-primary" %>
         <% end %>
+        <p class="acount-link">
+          アカウントをお持ちですか？
+          <%= link_to "ログインする", login_path %>
+        </p>
       </div>
     </div>
-    <p class="acount-link">
-      アカウントをお持ちですか？
-      <%= link_to "ログインする", login_path %>
-    </p>
   </div>
 </div>
