@@ -276,7 +276,7 @@ input {
   padding: 10px 5px 30px 5px;
 }
 .form-margin {
-  margin-bottom: 30px;  
+  margin-bottom: 10px;  
 }
 
 .top-control {
@@ -349,44 +349,11 @@ input {
 
 // login
 
-.facebook-login {
-  text-align: center;
-}
-
-.facebook-login-link {
-  display: inline-block;
-  .fab {
-    color: #385185;
-    padding-right: 5px;
-    text-align: center;
-  }
-  .facebook-login-txt {
-    color: #385185;
-    font-size: 16px;
-    font-weight: bold;
-  }
-}
-
-.facebook-signup-link {
-  display: inline-block;
-  width: 100%;
-  .fab-signup {
-    color: #fff;
-    padding-right: 5px;
-    text-align: center;
-  }
-  .facebook-signup-txt {
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
-
 .forget-pass-link {
   color: #00376b;
   font-size: 12px;
   line-height: 14px;
-  margin-top: 14px;
+  margin-top: 15px;
   text-align: center;
 }
 
