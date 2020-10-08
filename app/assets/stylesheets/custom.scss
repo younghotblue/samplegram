@@ -71,14 +71,9 @@ hr {
 }
 
 /* header */
-.navbar > .container {
-  height: 54px;
-}
-
 .navbar {
   height: 54px;
   align-items: center;
-  padding: 0 20px;
   background-color: rgba(var(--b3f,250,250,250),1);  
 }
 
@@ -87,10 +82,6 @@ nav {
   bottom: 25px;
   padding-right: 18px;
 }
-
-.nav > li > a {
-  height: 54px;
-} 
 
 .navbar-inverse {
   background-color: #FFF;
@@ -121,8 +112,7 @@ nav {
 
 .search-form {
   margin: 0 auto;
-  position: relative;
-  top: 15px;
+  padding-top: 15px;
   min-width: 125px;
   width: 20%;
   height: 24px;
@@ -132,14 +122,6 @@ nav {
     border-radius: 2px 0 0 2px;
     background: #eee;	
     text-align: center;
-  }
-  .search-btn {
-    position: absolute; 
-    left: 1px;
-    bottom: 3px;
-    background: none;
-    border: none;
-    font-size: 11px;/*アイコンサイズ*/
   }
 }
 

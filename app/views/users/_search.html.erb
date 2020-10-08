@@ -1,8 +1,4 @@
-<div class="search-form">
-  <%= search_form_for @search, url: users_path, local: true, :method => 'get' do |f| %>
-    <%= f.search_field :name_cont, :placeholder => "検索", class: "search-box" %>
-    <%= f.button :type => "submit", class: "search-btn" do %>
-      <i id="font-color", class="fas fa-search"></i>
-    <% end %>
-  <% end %>
-</div>
+<%= search_form_for @search, url: users_path, local: true, :method => 'get' do |f| %>
+  <%= f.search_field :name_cont, :placeholder => "検索", class: "search-box" %>
+<% end %>
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_05_130108) do
+ActiveRecord::Schema.define(version: 2020_10_08_113605) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,15 @@ ActiveRecord::Schema.define(version: 2020_10_05_130108) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "sns_credentials", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "user_name"
@@ -118,4 +127,5 @@ ActiveRecord::Schema.define(version: 2020_10_05_130108) do
   add_foreign_key "notifications", "users", column: "visited_id"
   add_foreign_key "notifications", "users", column: "visitor_id"
   add_foreign_key "posts", "users"
+  add_foreign_key "sns_credentials", "users"
 end

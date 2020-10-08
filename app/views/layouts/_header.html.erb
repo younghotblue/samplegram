@@ -1,7 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "Samplegram", root_path, id: "logo" %>
+    <div class="search-form">
     <%= render 'users/search' if logged_in? %>
+    </div>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -36,7 +38,11 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "ログイン", login_path %></li>
+          <li>
+            <%= link_to login_path, :method => :get do %>
+              <i class="fas fa-sign-in-alt fa-2x"></i>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     </nav>
