@@ -101,7 +101,7 @@ class Post < ApplicationRecord
   after_create do
     post = Post.find_by(id: id)
     # hashbodyに打ち込まれたハッシュタグを検出
-    if post.hashbody
+    if post.hashbody?
       hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
       hashtags.uniq.map do |hashtag|
         # ハッシュタグは先頭の#を外した上で保存
@@ -114,7 +114,7 @@ class Post < ApplicationRecord
   #更新アクション
   before_update do
     post = Post.find_by(id: id)
-    if post.hashbody
+    if post.hashbody?
       post.hashtags.clear
       hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
       hashtags.uniq.map do |hashtag|
