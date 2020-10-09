@@ -110,16 +110,5 @@ class Post < ApplicationRecord
       end
     end
   end
-  
-  #更新アクション
-  before_update do
-    post = Post.find_by(id: id)
-    post.hashtags.clear
-    hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
-    hashtags.uniq.map do |hashtag|
-      tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
-      post.hashtags << tag
-    end
-  end
 end
 
