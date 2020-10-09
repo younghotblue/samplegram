@@ -9,7 +9,7 @@ User.create!(name:  "Example User",
              activated_at: Time.zone.now)
 
 # 追加のユーザーをまとめて生成する
-99.times do |n|
+30.times do |n|
   name = Faker::Games::Pokemon.name
   user_name = "example#{n+1}"
   email = "example-#{n+1}@example.com"
@@ -24,15 +24,9 @@ User.create!(name:  "Example User",
 end
 
 #投稿を生成する
-user.first = User.order(:created_at).take(6)
-caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @post = users.first.post.create!(caption: caption, hashbody: "#雪")
-      @posts.image.attach(io: File.open('app/assets/images/yEMIStDLa2W9ZWf.png'), filename: "yEMIStDLa2W9ZWf.png")}
-
-
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#雪")
       @posts.image.attach(io: File.open('app/assets/images/yEMIStDLa2W9ZWf.png'), filename: "yEMIStDLa2W9ZWf.png")}
 
 users = User.order(:created_at).take(6)
