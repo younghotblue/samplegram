@@ -31,27 +31,27 @@ users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#�
 
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#海外旅行")
       @posts.image.attach(io: File.open('app/assets/images/r67h4934.jpeg'), filename: "r67h4934.jpeg")}
 
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#ビル")
       @posts.image.attach(io: File.open('app/assets/images/OeL5025.jpeg'), filename: "OeL5025.jpeg")}
 
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#山")
       @posts.image.attach(io: File.open('app/assets/images/ocpIYPhI7I572WF.png'), filename: "ocpIYPhI7I572WF.png")}
 
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#花火大会")
       @posts.image.attach(io: File.open('app/assets/images/eEy5oxiZSysNQwZ.png'), filename: "eEy5oxiZSysNQwZ.png")}
 
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
-users.each { |user| @posts = user.posts.create!(caption: caption)
+users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#Newyork")
       @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
 
 
