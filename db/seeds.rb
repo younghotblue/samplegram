@@ -24,6 +24,11 @@ User.create!(name:  "Example User",
 end
 
 #投稿を生成する
+user.first = User.order(:created_at).take(6)
+caption = Faker::Lorem.sentence(word_count: 5)
+users.each { |user| @post = user.first.post.create!(caption: caption, hashbody: "#雪")
+      @posts.image.attach(io: File.open('app/assets/images/yEMIStDLa2W9ZWf.png'), filename: "yEMIStDLa2W9ZWf.png")}
+
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
 users.each { |user| @posts = user.posts.create!(caption: caption)
