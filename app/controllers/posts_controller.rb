@@ -15,7 +15,7 @@ class PostsController < ApplicationController
       @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
     else
       @hashtag = Hashtag.find_by(hashname: params[:name])
-      @post = @hashtag.posts.paginate(page: params[:page]).reverse_order
+      @post = @hashtag.posts.reverse_order
       @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
     end
   end

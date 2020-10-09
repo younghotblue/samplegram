@@ -48,12 +48,11 @@ users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
 users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#花火大会")
       @posts.image.attach(io: File.open('app/assets/images/eEy5oxiZSysNQwZ.png'), filename: "eEy5oxiZSysNQwZ.png")}
-
+      
 users = User.order(:created_at).take(6)
 caption = Faker::Lorem.sentence(word_count: 5)
 users.each { |user| @posts = user.posts.create!(caption: caption, hashbody: "#Newyork")
       @posts.image.attach(io: File.open('app/assets/images/TuV2MA9.png'), filename: "TuV2MA9.png")}
-
 
 #リレーションシップを作成する
 users = User.all
