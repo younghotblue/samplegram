@@ -42,8 +42,10 @@
           <div>
             <span><strong><%= post.user.name %></strong></span>
             <span><%= post.caption %></span>
+            <br>
+            <span><%= link_to post.hashbody, post_path(post) if post.hashbody? %></span>
             <span class="timestamp">
-              <%= link_to time_ago_in_words(post.created_at).upcase + "前", post_path(post), class: "timestamp no-text-decoration" %>
+              <%= time_ago_in_words(post.created_at).upcase + "前" %>
             </span>
             <div id="comment-post-<%= post.id.to_s %>">
               <%= render 'posts/comment_list', { post: post } %>

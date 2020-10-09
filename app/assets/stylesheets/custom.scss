@@ -65,6 +65,10 @@ p {
   line-height: 1.7em;
 }
 
+ul {
+  list-style: none;
+}
+
 hr {
   width: 900px;
   margin: 15px 0;
@@ -75,12 +79,6 @@ hr {
   height: 54px;
   align-items: center;
   background-color: rgba(var(--b3f,250,250,250),1);  
-}
-
-nav {
-  position: relative;
-  bottom: 25px;
-  padding-right: 18px;
 }
 
 .navbar-inverse {
@@ -631,7 +629,7 @@ h4{
 
 .timestamp {
   color:#8e8e8e;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .post-sub-text {
@@ -708,4 +706,35 @@ h4{
 
 .hr {
   width: 100%;
+}
+
+// hashtags
+
+.search-title {
+  margin-bottom: 40px;
+}
+
+.hashtag-post-box {
+  margin-bottom: 35px;
+}
+
+.hashtag-hr {
+  border-color: #8e8e8e;
+  border-width: 2px;
+  height: 10px;
+  width: 100%;
+}
+
+.hashtag-name {
+  margin-left: 40px;
+}
+
+.hashtag-name-margin {
+  display: inline;
+  margin-right: 10px;
+}
+
+.username-top {
+  position: relative;
+  top: 3px;
 }

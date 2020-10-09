@@ -8,7 +8,6 @@ gem 'omniauth-facebook'
 gem 'aws-sdk-s3',                 require: false
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick',                '4.9.5'
-gem 'devise'
 gem 'ransack'
 gem 'enum_help'
 gem 'bcrypt',                     '3.1.13'

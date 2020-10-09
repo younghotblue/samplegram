@@ -10,7 +10,9 @@
             <%= form_with model: @post, local: true do |f| %>
               <%= render 'shared/error_messages', object: f.object %>
               
-              <%= f.text_field :caption, class: "form-control", placeholder: "キャプションを書く" %>
+              <%= f.text_area :caption, class: "form-control", placeholder: "キャプションを書く" %>
+              
+              <%= f.text_field :hashbody, class: "form-control", placeholder: "ハッシュタグを書く" %>
               
               <%= f.submit "投稿", class: "btn btn-primary" %>
               

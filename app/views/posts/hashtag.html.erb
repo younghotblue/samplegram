@@ -1,0 +1,52 @@
+<div class="row">
+  <% if params[:name] == nil %>
+  <% else %>
+    <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
+      <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @post.count %> 件 </h3>
+      <div class="row">
+        <% @post.each do |post| %>
+          <div class="col-md-6">
+            <div class= "hashtag-post-box">
+              <%= link_to post_path(post) do %>
+                <ul>
+                  <li>
+                    <%= link_to user_path(post.user) do %>
+                      <div class="post-profile-icon">
+                       <%= gravatar_for post.user, size: 40 %>
+                      </div>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to user_path(post.user), class: "black-color no-text-decoration",
+                            title: post.user.name do %>
+                      <strong class="username-top"><%= post.user.name %></strong>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to(post_path(post)) do %>
+                      <%= image_tag post.hashtag_image if post.image.attached? %>
+                    <% end %>
+                  </li>
+                </ul>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %> 
+  <hr class="hashtag-hr">
+  <div class="row">
+    <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
+      <div class= "hashtag-name">
+        <% @hashtags.sort.reverse.each do |count| %>
+          <% count[1].each do |hashtag| %>
+            <p class="hashtag-name-margin">
+              <%= link_to "##{hashtag.hashname} (#{hashtag.posts.count})","/post/hashtag/#{hashtag.hashname}" %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

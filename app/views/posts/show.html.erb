@@ -24,6 +24,8 @@
         <div class="m-2">
           <strong>
             <%= @post.caption %>
+            <br>
+            <%= render_with_hashtags(@post.hashbody) %>
           </strong>
         </div>
         <div class="comment-post-id">
@@ -38,9 +40,9 @@
         <div class="row parts">
           <div id="like-icon-post-<%= @post.id.to_s %>">
             <% if @post.liked_by(current_user).present? %>
-              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+              <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :delete, remote: true, class: "loved hide-text" %>
             <% else %>
-              <%= link_to "いいね", post_likes_path(@post), method: :POST, remote: true, class: "love hide-text" %>
+              <%= link_to "いいね", post_likes_path(@post), method: :post, remote: true, class: "love hide-text" %>
             <% end %>
           </div>
         </div>

@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :hashtag_posts, dependent: :destroy
+  has_many :hashtags, through: :hashtag_posts
   has_many :notifications, dependent: :destroy
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -22,8 +24,14 @@ class Post < ApplicationRecord
     image.variant(resize_to_limit: [300, 300])
   end
   
+  #投稿詳細ページ用のリサイズ済み画像を返す
   def show_image
     image.variant(resize_to_limit: [700, 800])
+  end
+  
+  #ハッシュタグ
+  def hashtag_image
+    image.variant(resize_to_limit: [500, 500])
   end
   
   def liked_by(user)
@@ -80,6 +88,32 @@ class Post < ApplicationRecord
       notification.checked = true
     end
     notification.save if notification.valid?
+  end
+  
+  after_create do
+    post = Post.find_by(id: id)
+    # hashbodyに打ち込まれたハッシュタグを検出
+    if post.hashbody?
+      hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+      hashtags.uniq.map do |hashtag|
+        # ハッシュタグは先頭の#を外した上で保存
+        tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+        post.hashtags << tag
+      end
+    end
+  end
+  
+  #更新アクション
+  before_update do
+    post = Post.find_by(id: id)
+    if post.hashbody?
+      post.hashtags.clear
+      hashtags = hashbody.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+      hashtags.uniq.map do |hashtag|
+        tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+        post.hashtags << tag
+      end
+    end
   end
 end
 

@@ -9,6 +9,17 @@ class PostsController < ApplicationController
   def show
   end
   
+  def hashtag
+    @user = current_user
+    if params[:name].nil?
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    else
+      @hashtag = Hashtag.find_by(hashname: params[:name])
+      @post = @hashtag.posts.paginate(page: params[:page]).reverse_order
+      @hashtags = Hashtag.all.to_a.group_by{ |hashtag| hashtag.posts.count}
+    end
+  end
+  
   def create
     @post = current_user.posts.build(post_params)
     @post.image.attach(params[:post][:image])
@@ -29,11 +40,11 @@ class PostsController < ApplicationController
     end
     redirect_to root_path
   end
-
+  
   private
 
     def post_params
-      params.require(:post).permit(:caption, :image)
+      params.require(:post).permit(:caption, :hashbody, :image, hashtag_ids: [])
     end
     
     def correct_user
