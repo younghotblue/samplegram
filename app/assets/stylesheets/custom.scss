@@ -60,6 +60,10 @@ h2 {
   color: #777;
 }
 
+h4{
+  font-size: 18px;
+  font-weight: 600;
+}
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -67,18 +71,24 @@ p {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 hr {
-  width: 900px;
+  width: 100%;
   margin: 15px 0;
 }
 
 /* header */
 .navbar {
   height: 54px;
+  width: 100%;
   align-items: center;
   background-color: rgba(var(--b3f,250,250,250),1);  
+}
+
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 5px;
 }
 
 .navbar-inverse {
@@ -91,10 +101,15 @@ hr {
   background-color: #fff;
 }
 
+#global-nav .nav > li {
+  display: inline;
+  float: left;
+}
+
 .jumbotron {
   background-color: #fff;
   margin-top: 35px;
-  border: 1px solid rgba(var(--b6a,219,219,219),1);;
+  border: 1px solid rgba(var(--b6a,219,219,219),1);
 }
 
 #logo {
@@ -108,27 +123,18 @@ hr {
   text-decoration: none;
 }
 
-.search-form {
-  margin: 0 auto;
-  padding-top: 15px;
-  min-width: 125px;
-  width: 20%;
-  height: 24px;
-  text-align: center;
-  .search-box {
-    outline: 0;
-    border-radius: 2px 0 0 2px;
-    background: #eee;	
-    text-align: center;
-  }
-}
-
 #font-color {
   color: #9d9d9d;
 }
 
 .fas, .far {
   color: #000;
+}
+
+@media (max-width: 767px) {
+  .nav {
+    float: right;
+  }
 }
 
 /* miscellaneous */
@@ -166,6 +172,17 @@ aside {
       margin-bottom: 3px;
       margin-top: 0px;
     }
+  }
+}
+
+.header-gravatar {
+  position: relative;
+  right: 5px;
+  bottom: 3px;
+  .gravatar {
+    float: left;
+    margin-right: 0;
+    border-radius: 50%;
   }
 }
 
@@ -233,9 +250,9 @@ aside {
 }
 
 /* forms */
+
 .main {
   margin: 0 auto;
-  width: 90%;
   padding: 50px 75px 100px;
   display: block;
   box-sizing: border-box;
@@ -266,6 +283,7 @@ input {
 }
 
 .form-box {
+  width: 100%;
   align-items: center;
   background-color: #fff;
   border: 1px solid #dbdbdb;
@@ -454,19 +472,6 @@ span.image {
   font-size: 14px;
 }
 
-body{
-  background-color:#FAFAFA;
-  color: #262626;
-  font-size: 14px;
-  font-family: -apple-system,BlinkMacSystemFont,
-  "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-
-h4{
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .link-font, a.link-font{
   color: #3897F0;
   font-weight: 600;
@@ -479,59 +484,44 @@ h4{
   cursor: pointer;
 }
 
-// モーダルの設定
-.modal .modal-dialog.modal-dialog-centered{
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-.modal-content{
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  border: 0px;
-  border-radius: 12px;
-}
-.modal-header{
-  padding: 25px;
-  border-bottom: 1px solid #efefef;
-}
-.modal-body{
-  padding: 11px;
-  border-bottom: 1px solid #efefef;
-}
-
-.modal-body-b{
-  padding: 11px;
-  cursor: pointer;
-}
-
 // posts
 
 .post-wrap {
-  margin: 0 auto;
-  width: 100%;
-  padding: 25px 75px;
-  display: block;
+  margin-bottom: 50px;
   box-sizing: border-box;
-}
-
-.col-md-10 {
-  position: relative;
-  right: 70px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
 }
 
 .posts {
   list-style: none;
+  padding: 0;
 }
 
-.post-size {
-  width: 300px;
-  height: 300px;
+.card-header {
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
 }
 
 .post-profile-icon {
   position: relative;
-  bottom: 7px;
+  top: 12px;
+  padding-left: 10px;
+}
+
+.post-user-name {
+  position: relative;
+  top: 21px;
+}
+
+.post-image {
+  margin: 0 auto;
+  width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .card-wrap {
@@ -547,22 +537,14 @@ h4{
 }
 
 .post-delete {
+  position: relative;
+  top: 15px;
   float: right;
   color: #262626;
-  position: relative;
-  left: 445px;
+  margin-right: 10px;
   width: 20px;
   height: 20px;
-  font-size: 20px;
-}
-
-.post-show-delete {
-  color: #262626;
-  position: relative;
-  left: 100px;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .parts {
@@ -570,8 +552,8 @@ h4{
 }
 
 .card-body {
-  width: 450px;
-  margin-bottom: 40px;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .card-top {
@@ -580,7 +562,7 @@ h4{
 }
 
 .love {
-  background-image: image-url("parts5.png");
+  background-image: image-url("like.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -588,7 +570,7 @@ h4{
 }
 
 .loved {
-  background-image: image-url("parts7.png");
+  background-image: image-url("unlike.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -606,7 +588,7 @@ h4{
   position: relative;
   bottom: 38px;
   left: 43px;
-  background-image: image-url("parts6.png");
+  background-image: image-url("comment.png");
   background-repeat: no-repeat;
   height: 36px;
   width: 36px;
@@ -614,11 +596,11 @@ h4{
 }
 
 .comment-width {
-  width: 900px;
+  width: 100%;
 }
 
 .delete-comment {
-  background-image: image-url("parts8.png");
+  background-image: image-url("cancel.png");
   background-repeat: no-repeat;
   width: 11px;
   height: 11px;
@@ -636,6 +618,8 @@ h4{
   text-decoration: none;
   color: #262626;
 }
+
+// post show
 
 .post-show-wrap .col-md-8 {
   padding: 0px;
@@ -662,10 +646,13 @@ h4{
   margin: 40px;
 }
 
-.post-user-name {
-  display: flex;
-  align-items: center;
-  line-height: 0;
+.post-show-delete {
+  color: #262626;
+  position: relative;
+  left: 100px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
 }
 
 .post-show-hr {
@@ -686,8 +673,6 @@ h4{
 
 .txt-bottom {
   margin-bottom: 20px;
-  position: relative;
-  left: 350px;
 }
 
 .notification-none {
@@ -710,31 +695,54 @@ h4{
 
 // hashtags
 
-.search-title {
-  margin-bottom: 40px;
+.hashtag-post-wrap {
+  display: block;
+  .search-title {
+    margin-bottom: 40px;
+  }
+  .hashtag-post-box {
+    margin: 0 auto;
+  }
+  .hashtag-post-header {
+    width: 100%;
+    height: 57px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+  }
+  .hashtag-profile-icon {
+    position: relative;
+    top: 8px;
+    padding-left: 10px;
+  }
+  .hashtag-user-name {
+    position: relative;
+    top: 19px;
+  }
+  .hashtag-post-image {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+  }
+  .hashtag-hr {
+    border-color: #8e8e8e;
+    border-width: 2px;
+    height: 10px;
+    width: 100%;
+  }
+  .hashtag-name {
+    margin-left: 10px;
+  }
+  .hashtag-name-margin {
+    display: inline;
+    margin-right: 10px;
+  }
 }
 
-.hashtag-post-box {
-  margin-bottom: 35px;
-}
 
-.hashtag-hr {
-  border-color: #8e8e8e;
-  border-width: 2px;
-  height: 10px;
-  width: 100%;
-}
 
-.hashtag-name {
-  margin-left: 40px;
-}
 
-.hashtag-name-margin {
-  display: inline;
-  margin-right: 10px;
-}
-
-.username-top {
-  position: relative;
-  top: 3px;
-}

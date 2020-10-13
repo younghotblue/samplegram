@@ -9,7 +9,7 @@ User.create!(name:  "Example User",
              activated_at: Time.zone.now)
 
 # 追加のユーザーをまとめて生成する
-30.times do |n|
+50.times do |n|
   name = Faker::Games::Pokemon.name
   user_name = "example#{n+1}"
   email = "example-#{n+1}@example.com"

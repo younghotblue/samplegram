@@ -2,8 +2,6 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :hashtag_posts, dependent: :destroy
   has_many :hashtags, through: :hashtag_posts
-  has_many :hashtag_posts, dependent: :destroy
-  has_many :hashtags, through: :hashtag_posts
   has_many :notifications, dependent: :destroy
   has_many :likes, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -27,14 +25,8 @@ class Post < ApplicationRecord
   end
   
   #投稿詳細ページ用のリサイズ済み画像を返す
-  #投稿詳細ページ用のリサイズ済み画像を返す
   def show_image
     image.variant(resize_to_limit: [700, 800])
-  end
-  
-  #ハッシュタグ
-  def hashtag_image
-    image.variant(resize_to_limit: [500, 500])
   end
   
   #ハッシュタグ

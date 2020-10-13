@@ -1,38 +1,33 @@
-<div class="row">
+<% provide(:title, "Hashtags") %>
+<div class="hashtag-post-wrap">
   <% if params[:name] == nil %>
   <% else %>
-    <div class= "col-xs-12 col-lg-12 col-md-12 col-sm-12">
-      <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @post.count %> 件 </h3>
-      <div class="row">
-        <% @post.each do |post| %>
-          <div class="col-md-6">
-            <div class= "hashtag-post-box">
-              <%= link_to post_path(post) do %>
-                <ul>
-                  <li>
-                    <%= link_to user_path(post.user) do %>
-                      <div class="post-profile-icon">
-                       <%= gravatar_for post.user, size: 40 %>
-                      </div>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to user_path(post.user), class: "black-color no-text-decoration",
-                            title: post.user.name do %>
-                      <strong class="username-top"><%= post.user.name %></strong>
-                    <% end %>
-                  </li>
-                  <li>
-                    <%= link_to(post_path(post)) do %>
-                      <%= image_tag post.hashtag_image if post.image.attached? %>
-                    <% end %>
-                  </li>
-                </ul>
-              <% end %>
-            </div>
+    <h3 class="search-title">#<%= @hashtag.hashname %>:  <%= @post.count %> 件 </h3>
+    <div class="row">
+      <% @post.each do |post| %>
+        <div class="col-md-6">
+          <div class= "hashtag-post-box">
+            <%= link_to post_path(post) do %>
+              <div class="hashtag-post-header">
+                <%= link_to user_path(post.user) do %>
+                  <div class="hashtag-profile-icon">
+                   <%= gravatar_for post.user, size: 40 %>
+                  </div>
+                <% end %>
+                <%= link_to user_path(post.user), class: "black-color",
+                        title: post.user.name do %>
+                  <strong class="hashtag-user-name"><%= post.user.name %></strong>
+                <% end %>
+              </div>
+              <div class="hashtag-post-image">
+                <%= link_to(post_path(post)) do %>
+                  <%= image_tag post.hashtag_image if post.image.attached? %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   <% end %> 
   <hr class="hashtag-hr">
@@ -50,3 +45,4 @@
     </div>
   </div>
 </div>
+
