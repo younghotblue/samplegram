@@ -194,7 +194,7 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
   span {
     display: block;
@@ -203,17 +203,16 @@ aside {
 
 .stats {
   overflow: auto;
-  margin-top: 0;
+  margin: 0 auto;
+  width: 100%;
   padding: 0;
+  span {
+    font-size: 18px;
+  }
   .number-posts {
     float: left;
     padding: 0 10px;
-    position: relative;
-    top: 5px;
     color: gray;
-    span {
-      display: block;
-    }
   }
   a {
     float: left;
@@ -228,9 +227,6 @@ aside {
       text-decoration: none;
       color: blue;
     }
-  }
-  strong {
-    display: block;
   }
 }
 
@@ -291,19 +287,32 @@ input {
   margin: 0 0 30px;
   padding: 10px 5px 30px 5px;
 }
+
 .form-margin {
   margin-bottom: 10px;  
-}
-
-.top-control {
-  margin-top: 35px;
 }
 
 .form-control {
   margin-bottom: 15px;
 }
 
-.acount-link {
+.form-top {
+  margin-top: 35px;
+}
+
+.edit-profile-btn {
+  position: relative;
+  bottom: 8px;
+  margin: 10px 0 0 2px;
+  font-weight: bold;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  border-color: #dbdbdb;
+  font-size: 16px;
+}
+
+.account-link {
   text-align: center;
   padding-top: 30px;
 }
@@ -361,6 +370,13 @@ input {
   font-weight: bold;
   margin: 14px 14px 0 0;
   text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 // login
@@ -425,51 +441,60 @@ span.image {
 // user show
 
 .user-profile {
-  position: relative;
-  left: 95px;
-  width: 30%;
+  margin-bottom: 60px;
+  margin-left: 100px;
+}
+
+.gravatar_profile {
+  margin-top: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  span {
+    display: block;
+  }
 }
 
 .btn-width {
   text-align: center;
   width: 265px;
   height: 30px !important;
+  font-size: 15px;
 }
 
 .gallery {
-  position: relative;
-  top: 40px;
-  left: 25px;
+  margin: 0 auto;
 }
 
 .image-margin {
   margin-bottom: 30px;
+  img {
+    width: 100%;
+  }
 }
 
 .profile {
-  position: relative;
-  left: 10px;
-  bottom: 13px;
+  padding-top: 10px;
+  padding-left: 10px;
   span {
     display: block;
     &:first-child {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 600;
       padding-bottom: 6px;
     }
   }
 }
 
-.edit-profile-btn {
+.user-profile-btn {
   position: relative;
-  bottom: 10px;
-  margin: 15px 0 0 15px;
+  bottom: 8px;
+  margin: 10px 0 0 15px;
   font-weight: bold;
-  height: 25px;
+  height: 30px;
   line-height: 25px;
-  padding: 0 10px;
+  padding: 2px 10px 0;
   border-color: #dbdbdb;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .link-font, a.link-font{
@@ -484,6 +509,44 @@ span.image {
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  .user-profile {
+    margin-left: 50px;
+  }
+  .user-profile-btn {
+    margin-left: 0; 
+    font-size: 15px;
+  }  
+}
+
+@media screen and (max-width: 424px) {
+  .user-profile {
+    margin-left: 35px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .user-profile-btn {
+    margin-left: 0; 
+    margin-top: 10px;
+  }  
+}
+
+@media screen and (min-width: 1024px) {
+  .user-profile {
+    margin-left: 70px;
+  }
+  
+  .user-profile-btn {
+    margin-left: 0; 
+  }  
+}
+
+@media screen and (max-width: 1439px) {
+  .user-profile-btn {
+    margin-top: 5px; 
+  }  
+}
 // posts
 
 .post-wrap {
@@ -621,48 +684,74 @@ span.image {
 
 // post show
 
-.post-show-wrap .col-md-8 {
-  padding: 0px;
-}
-
-.card-right {
-  padding: 20px;
-}
-
-.card-right-name {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #e6e6e6;
-  display: flex;
-}
-
-.card-right-comment {
-  padding-bottom: 10px;
-  height: 235px;
-  overflow: auto;
+.post-show-wrap {
+  margin-top: 40px;
+  .col-md-8 {
+    padding: 0;
+    .card-left {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .col-md-4 {
+    padding: 0;
+    .card-right {
+      padding: 15px;
+      width: 100%;
+      .card-right-comment {
+        height: 235px;
+        overflow: auto;
+        padding-top: 20px;
+        .card-right-header {
+          padding-top: 10px;
+          height: 30px;
+          border-bottom: 1px solid #e6e6e6;
+        }
+        .post-show-icon {
+          position: relative;
+          bottom: 23px;
+        }
+        .post-show-name {
+          position: relative;
+          bottom: 15px;
+        }
+        .post-show-delete {
+          color: #262626;
+          position: relative;
+          left: 100px;
+          width: 20px;
+          height: 20px;
+          font-size: 20px;
+        }
+        .post-contents {
+          padding-top: 20px;
+        }
+      }
+      .post-show-hr {
+        width: 100%;
+        border: 1px solid #e6e6e6;
+      }
+      .action-parts {
+        position: relative;
+        top: 20px;
+        .parts {
+          border-top: 1px solid #e6e6e6;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
 }
 
 .post-show-frame {
-  border: 1px solid #e6e6e6;
-  margin: 40px;
-}
+    border: 1px solid #e6e6e6;
+  }
 
-.post-show-delete {
-  color: #262626;
-  position: relative;
-  left: 100px;
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-}
-
-.post-show-hr {
-  width: 100%;
-}
-
-.action-parts {
-  border-top: 1px solid #e6e6e6;
-  position: relative;
-  top: 20px;
+@media screen and (min-width: 1440px) {
+  .action-parts {
+    padding-top: 60px;
+  }
 }
 
 // notifications

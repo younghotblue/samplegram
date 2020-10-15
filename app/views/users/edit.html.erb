@@ -9,7 +9,7 @@
         </div>
         <%= link_to "プロフィール写真を変更", "https://gravatar.com/emails", class: "btn btn-outline-dark common-btn edit-profile-btn" %>
         
-        <%= form_with model: @user, local: true, class: "top-control" do |f| %>
+        <%= form_with model: @user, local: true, class: "form-top" do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
           
           <%= f.label :name %>

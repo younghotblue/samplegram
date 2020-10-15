@@ -21,17 +21,17 @@ class Post < ApplicationRecord
   
   #プロフィールページ用のリサイズ済み画像を返す
   def image_gallery
-    image.variant(resize_to_limit: [300, 300])
+    image.variant(resize_to_limit: [600, 600])
   end
   
   #投稿詳細ページ用のリサイズ済み画像を返す
   def show_image
-    image.variant(resize_to_limit: [700, 800])
+    image.variant(resize_to_limit: [700, 700])
   end
   
   #ハッシュタグ
   def hashtag_image
-    image.variant(resize_to_limit: [500, 500])
+    image.variant(resize_to_limit: [600, 600])
   end
   
   def liked_by(user)

@@ -7,12 +7,14 @@
   <div class="col-md-4">
     <div class="card-right">
       <div class="card-right-comment">
-        <div class="card-right-name">
-          <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-            <%= gravatar_for @post.user, size: 35, class: "post-profile-icon" %>
-          <% end %>
+        <div class="card-right-header">
+          <div class="post-show-icon">
+            <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
+              <%= gravatar_for @post.user, size: 35 %>
+            <% end %>
+          </div>
           
-          <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
+          <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-show-name",
             title: @post.user.name do %>
             <strong><%= @post.user.name %></strong>
           <% end %>
@@ -23,7 +25,7 @@
             <% end %>
           <% end %>
         </div>
-        <div class="m-2">
+        <div class="post-contents">
           <strong>
             <%= @post.caption %>
             <br>
@@ -31,7 +33,7 @@
           </strong>
         </div>
         <div class="comment-post-id">
-          <div class="m-2">
+          <div class="post-contents">
             <div id="comment-post-<%= @post.id.to_s %>">
               <%= render 'comment_list', post: @post %>
             </div>
@@ -39,7 +41,7 @@
         </div>
       </div>
       <div class="action-parts">
-        <div class="row parts">
+        <div class="parts">
           <div id="like-icon-post-<%= @post.id.to_s %>">
             <% if @post.liked_by(current_user).present? %>
               <%= link_to "いいねを取り消す", post_like_path(@post.id, @post.liked_by(current_user)), method: :delete, remote: true, class: "loved hide-text" %>
@@ -53,11 +55,11 @@
         </div>
         <div class="timestamp"><%= time_ago_in_words(@post.created_at).upcase %>前</div>
         <hr class="post-show-hr">
-        <div class="row parts" id="comment-form-post-<%= @post.id.to_s %>">
-          <%= form_with model: [@post, Comment.new],  class: "w-100" do |f| %>
+        <div id="comment-form-post-<%= @post.id.to_s %>">
+          <%= form_with model: [@post, Comment.new] do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_field :comment, class: "form-control comment-input border-0", placeholder: "コメント ...", autocomplete: :off %>
+            <%= f.text_field :comment, class: "form-control", placeholder: "コメント ...", autocomplete: :off %>
           <% end %>
         </div>
       </div>
