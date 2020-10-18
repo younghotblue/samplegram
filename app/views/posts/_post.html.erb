@@ -45,6 +45,7 @@
         <span><%= post.caption %></span>
         <br>
         <span><%= link_to post.hashbody, post_path(post) if post.hashbody? %></span>
+        <br>
         <span class="timestamp">
           <%= time_ago_in_words(post.created_at).upcase + "前" %>
         </span>
@@ -54,9 +55,14 @@
         <hr>
         <div class="comment-width" id="comment-form-post-<%= post.id.to_s %>">
           <%= form_with model: [post, Comment.new] do |f| %>
-            <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.hidden_field :post_id, value: post.id %>
-            <%= f.text_field :comment, class: "form-control", placeholder: "コメント ...", autocomplete: :off %>
+            <div class="input-group">
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :post_id, value: post.id %>
+              <%= f.text_field :comment, class: "form-control", placeholder: "コメント ...", autocomplete: :off %>
+              <span class="input-group-btn">
+                <%= f.submit "投稿", class: "btn btn-primary" %>
+              </span>
+            </div>
           <% end %>
         </div>
       </div>

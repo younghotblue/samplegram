@@ -32,12 +32,8 @@
             <%= render_with_hashtags(@post.hashbody) %>
           </strong>
         </div>
-        <div class="comment-post-id">
-          <div class="post-contents">
-            <div id="comment-post-<%= @post.id.to_s %>">
-              <%= render 'comment_list', post: @post %>
-            </div>
-          </div>
+        <div id="comment-post-<%= @post.id.to_s %>">
+          <%= render 'comment_list', post: @post %>
         </div>
       </div>
       <div class="action-parts">
@@ -57,9 +53,14 @@
         <hr class="post-show-hr">
         <div id="comment-form-post-<%= @post.id.to_s %>">
           <%= form_with model: [@post, Comment.new] do |f| %>
-            <%= f.hidden_field :user_id, value: current_user.id %>
-            <%= f.hidden_field :post_id, value: @post.id %>
-            <%= f.text_field :comment, class: "form-control", placeholder: "コメント ...", autocomplete: :off %>
+            <div class="input-group">
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :post_id, value: @post.id %>
+              <%= f.text_field :comment, class: "form-control", placeholder: "コメント ...", autocomplete: :off %>
+              <span class="input-group-btn">
+                <%= f.submit "投稿", class: "btn btn-primary" %>
+              </span>
+            </div>
           <% end %>
         </div>
       </div>

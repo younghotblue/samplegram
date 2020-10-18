@@ -1,26 +1,25 @@
 <% provide(:title, @user.name) %>
 
-  <div class="row">
-    <aside class="col-md-6 col-md-offset-3">
-      <div class="user-profile">
-        <section class="gravatar_profile">
-          <%= gravatar_for @user, size: 100 %>
-          <%= @user.user_name %>
-          <%= link_to "プロフィールを編集", edit_user_path,
-                            class: "btn user-profile-btn" %>
-          <span><%= render 'follow_form' if logged_in? %></span>
-        </section>
-        <section class="stats">
-          <%= render 'shared/stats' %>
-          <div class="profile">
-            <span><%= @user.name %></span>
-            <span><%= @user.profile %></span>
-          </div>
-        </section>
-      </div>
-    </aside>
-  </div>
-
+<div class="row">
+  <aside class="col-md-6 col-md-offset-3">
+    <div class="user-profile">
+      <section class="gravatar_profile">
+        <%= gravatar_for @user, size: 100 %>
+        <%= @user.user_name %>
+        <%= link_to "プロフィールを編集", edit_user_path,
+                          class: "btn user-profile-btn" %>
+        <span><%= render 'follow_form' if logged_in? %></span>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+        <div class="profile">
+          <span><%= @user.name %></span>
+          <span><%= @user.profile %></span>
+        </div>
+      </section>
+    </div>
+  </aside>
+</div>
 <div class="gallery">
   <div class="row">
     <% @posts.each do |post| %>

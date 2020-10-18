@@ -1,7 +1,9 @@
 <% provide(:title, 'Sign up') %>
 <div class="main">
   <div class="form-box">
-    <h1 class="font-style">Samplegram</h1>
+    <div class="image-logo">
+      <%= image_tag 'logo.jpg' %>
+    </div>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= form_with url: login_path, scope: :session, local: true, class: 'form-margin' do |f| %>

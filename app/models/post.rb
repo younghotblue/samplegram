@@ -9,14 +9,14 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :caption, length: { maximum: 140 }
   validates :user_id, presence: true
-  validates :image, content_type: { in: %w[image/jpeg image/png],
+  validates :image, content_type: { in: %w[image/jpeg image/jpg image/png],
                                       message: "有効な画像形式である必要があります" },
                       size:         { less_than: 5.megabytes,
                                       message: "5MB未満である必要があります" }
                                       
   # フィード用のリサイズ済み画像を返す
   def display_image
-    image.variant(resize_to_limit: [900, 900])
+    image.variant(resize_to_limit: [1000, 1000])
   end
   
   #プロフィールページ用のリサイズ済み画像を返す
@@ -31,7 +31,7 @@ class Post < ApplicationRecord
   
   #ハッシュタグ
   def hashtag_image
-    image.variant(resize_to_limit: [600, 600])
+    image.variant(resize_to_limit: [800, 800])
   end
   
   def liked_by(user)

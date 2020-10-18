@@ -4,6 +4,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/earlyaccess/hannari.css');
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -34,11 +37,15 @@ textarea {
 .center {
   text-align: center;
   h1 {
-  margin-bottom: 10px;
+    margin: 10px 0 10px;
  }
 }
 
 /* typography */
+
+a:hover, a:visited {
+  text-decoration: none;
+}
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -108,19 +115,41 @@ hr {
 
 .jumbotron {
   background-color: #fff;
-  margin-top: 35px;
+  margin-top: 25px;
   border: 1px solid rgba(var(--b6a,219,219,219),1);
+  h1 {
+    font-size: 3em;
+    letter-spacing: 1px;
+    font-family: 'Hannari', cursive;
+    strong {
+      font-family: 'Caveat', cursive;
+      margin-right: 10px;
+    }
+  }
+  span {
+    font-family: 'Hannari', cursive;
+  }
+}
+
+.home-image {
+  text-align: center;
+  margin-right: 30px;
+  img {
+    width: 250px;
+    height: 450px;
+  }
 }
 
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 2em;
-  font-family: Billabong;
-  color: #000;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 2px;
   text-decoration: none;
+  img {
+    width: 92px;
+    height: 49px;
+  }
 }
 
 #font-color {
@@ -254,15 +283,10 @@ aside {
   box-sizing: border-box;
 }
 
-.font-style {
-  font-family: Billabong;
-  font-size: 60px;
-}
-
 .gray {
   text-align: center;
   color: #8e8e8e;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 20px;
   margin-bottom: 15px;
@@ -288,12 +312,25 @@ input {
   padding: 10px 5px 30px 5px;
 }
 
+.image-logo {
+  text-align: center;
+  img {
+    margin: 0 auto;
+    width: 250px;
+    height: 125px;
+    
+  }
+}
+
 .form-margin {
   margin-bottom: 10px;  
 }
 
 .form-control {
   margin-bottom: 15px;
+}
+.input-group {
+  margin-bottom: 10px;
 }
 
 .form-top {
@@ -382,7 +419,6 @@ input {
 // login
 
 .forget-pass-link {
-  color: #00376b;
   font-size: 12px;
   line-height: 14px;
   margin-top: 15px;
@@ -392,7 +428,6 @@ input {
 .lock-icon {
   text-align: center;
   margin: 10px 0 5px;
-  
 }
 
 .cant-login {
@@ -488,7 +523,7 @@ span.image {
 .user-profile-btn {
   position: relative;
   bottom: 8px;
-  margin: 10px 0 0 15px;
+  margin: 12px 0 0 15px;
   font-weight: bold;
   height: 30px;
   line-height: 25px;
@@ -509,6 +544,12 @@ span.image {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1439px) {
+  .user-profile-btn {
+    margin-top: 5px; 
+  }  
+}
+
 @media screen and (max-width: 767px) {
   .user-profile {
     margin-left: 50px;
@@ -525,13 +566,6 @@ span.image {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .user-profile-btn {
-    margin-left: 0; 
-    margin-top: 10px;
-  }  
-}
-
 @media screen and (min-width: 1024px) {
   .user-profile {
     margin-left: 70px;
@@ -542,11 +576,15 @@ span.image {
   }  
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (min-width: 768px) {
   .user-profile-btn {
-    margin-top: 5px; 
+    margin-left: 0; 
+    margin-top: 10px;
   }  
 }
+
+
+
 // posts
 
 .post-wrap {
@@ -722,8 +760,10 @@ span.image {
         }
         .post-show-delete {
           color: #262626;
+          float: right;
           position: relative;
-          left: 100px;
+          bottom: 20px;
+          right: 10px;
           width: 20px;
           height: 20px;
           font-size: 20px;

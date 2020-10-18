@@ -42,12 +42,6 @@
           <%= f.select :sex, User.sexes_i18n.keys.map {|k| [User.sexes_i18n[k], k]}, {}, autofocus: true, :placeholder => "性別", class: 'form-control' %>
           
           <%= f.submit "送信する", class: "btn btn-primary" %>
-          
-          <% if current_user?(@user) %>
-          <div class="destroy-txt">
-            <%= link_to "アカウントを削除する", @user, method: :destroy, data: { confirm: "本当に削除しますか？" } %>
-          </div>
-          <% end %>
         <% end %>
       </div>
     </div>
