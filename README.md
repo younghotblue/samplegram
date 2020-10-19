@@ -1,6 +1,5 @@
 # Instagramのクローンアプリケーション
 
-
 これは、次のアプリケーションを基に作られたクローンアプリケーションです。
 [*Instagram*](https://www.instagram.com)
 
@@ -8,7 +7,6 @@
 [*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
 （第6版）
 [Michael Hartl](https://www.michaelhartl.com/) 著
- 
  
 # デモ
 
@@ -18,9 +16,7 @@
 
 ![demo2](https://user-images.githubusercontent.com/62897217/96463967-3f1ea500-1262-11eb-9605-02a14026c193.JPG)
 
-
 # 特徴
- 
  
 Samplegramは日々の日常や体験、興味関心のあるものを写真として共有することによって、
 友人や周りの人と繋がることができます。
@@ -30,15 +26,11 @@ Samplegramは日々の日常や体験、興味関心のあるものを写真と�
 
 ぜひ、写真を投稿して新しい自分を見つけてみませんか？
 
-
 # アプリのURL
-
 
 ### **https://arcane-sea-92693.herokuapp.com**
 
-
 # 使い方
- 
  
 このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
 
@@ -77,11 +69,9 @@ $ rails server
 
 👉 http://localhost:3000
  
- 
 # 作者
  
 * Shota Tamada
-* sho.sodawater@gmail.com
 
 # ライセンス
 
