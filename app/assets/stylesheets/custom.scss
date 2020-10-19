@@ -176,6 +176,21 @@ hr {
   @include box_sizing;
 }
 
+@media screen and (max-width: 600px) {
+.jumbotron {
+  h1 {
+    font-size: 2em;
+  }
+ }
+}
+
+@media screen and (max-width: 360px) {
+.jumbotron {
+  h1 {
+    font-size: 30px;
+  }
+ }
+}
 /* sidebar */
 
 aside {
