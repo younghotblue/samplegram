@@ -12,6 +12,7 @@
  
 # デモ
 
+
 ![samplegram-logo](https://user-images.githubusercontent.com/62897217/96464437-c704af00-1262-11eb-9200-65361d723680.JPG)
 
 ![demo1](https://user-images.githubusercontent.com/62897217/96463906-2f9f5c00-1262-11eb-9453-78fdd5204f0d.JPG)
@@ -79,12 +80,15 @@ $ rails server
  
  
 # 作者
+
  
 * Shota Tamada
 * sho.sodawater@gmail.com
 
+
 # ライセンス
+
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 このプロジェクトは MIT ライセンスの元にライセンスされています。 
-詳細は[LICENSE.md](LICENSE.md)をご覧ください。
+詳細は[LICENSE](LICENSE)をご覧ください。
