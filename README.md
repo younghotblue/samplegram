@@ -12,8 +12,11 @@
  
 # デモ
 
- 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+![samplegram-logo](https://user-images.githubusercontent.com/62897217/96464437-c704af00-1262-11eb-9200-65361d723680.JPG)
+
+![demo1](https://user-images.githubusercontent.com/62897217/96463906-2f9f5c00-1262-11eb-9453-78fdd5204f0d.JPG)
+
+![demo2](https://user-images.githubusercontent.com/62897217/96463967-3f1ea500-1262-11eb-9605-02a14026c193.JPG)
 
 
 # 特徴
@@ -80,7 +83,7 @@ $ rails server
 * Shota Tamada
 * sho.sodawater@gmail.com
 
-#ライセンス
+# ライセンス
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 このプロジェクトは MIT ライセンスの元にライセンスされています。 
