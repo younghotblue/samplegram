@@ -87,4 +87,4 @@ $ rails server
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 このプロジェクトは MIT ライセンスの元にライセンスされています。 
-詳細は[LICENSE.md](LICENSE.md)をご覧ください。
+詳細は[LICENSE](LICENSE)をご覧ください。
