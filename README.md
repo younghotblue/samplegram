@@ -2,11 +2,6 @@
 
 これは、次のアプリケーションを基に作られたクローンアプリケーションです。
 [*Instagram*](https://www.instagram.com)
-
-参考にした教材は、
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-（第6版）
-[Michael Hartl](https://www.michaelhartl.com/) 著
  
 # デモ
 

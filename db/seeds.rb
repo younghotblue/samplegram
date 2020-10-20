@@ -1,7 +1,7 @@
 # メインのサンプルユーザーを1人作成する
-User.create!(name:  "Example User",
-             user_name: "user",
-             email: "example@railstutorial.org",
+User.create!(name:  "Shota Tamada",
+             user_name: "tamasho01",
+             email: "sho.truecolors@gmail.com",
              password:              "foobar",
              password_confirmation: "foobar",
              admin: true,
